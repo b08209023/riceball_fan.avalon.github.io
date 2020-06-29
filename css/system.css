@@ -1,0 +1,25 @@
+.background {
+    background-image: url(../img/IMG_4768.JPG);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: inline-block;
+}
+
+#title {
+    background-color: #07581599;
+    /* display: inline-block; */
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    text-align: center;
+    margin-top: 30vh;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    height: 10vw;
+    width: 50vw;
+    color: white;
+    font-size: 5vw;
+    line-height: 10vw;
+    border-radius: 4vmin;
+}
