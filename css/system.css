@@ -13,13 +13,28 @@
     font-weight: 500;
     position: absolute;
     text-align: center;
-    margin-top: 30vh;
+    margin-top: 20vh;
     margin-left: 25vw;
     margin-right: 25vw;
-    height: 10vw;
+    height: 20vh;
     width: 50vw;
     color: white;
     font-size: 5vw;
-    line-height: 10vw;
+    line-height: 20vh;
+    border-radius: 4vmin;
+}
+
+#start {
+    position: absolute;
+    margin-top: 60vh;
+    margin-left: 35vw;
+    background-color: #169933b4;
+    display: inline-block;
+    height: 10vh;
+    width: 10vw;
+    line-height: 10vh;
+    font-size: 6vh;
+    text-align: center;
+    color: white;
     border-radius: 4vmin;
 }
