@@ -1,0 +1,12 @@
+    * {
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    
+    #gaming_mainpart {
+        position: absolute;
+        background-image: url(../img/IMG_4768.JPG);
+        background-size: cover;
+        height: 100vmin;
+        width: 100vmax;
+        display: inline-block;
+    }

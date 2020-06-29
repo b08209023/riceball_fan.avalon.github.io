@@ -3,6 +3,7 @@
 }
 
 .background {
+    /* position: absolute; */
     background-image: url(../img/IMG_4768.JPG);
     background-size: cover;
     height: 100vmin;
@@ -129,7 +130,7 @@
 #char_setting {
     background-image: url(../img/char_bg.JPG);
     background-size: cover;
-    height: 95vmin;
+    height: 100vmin;
     width: 100vmax;
     /* margin-: auto; */
     display: inline-block;
@@ -160,9 +161,10 @@
     margin-top: 10vmin;
     width: 30vmax;
     color: white;
+    background-color: #077a1199;
     /* height: 10vmin; */
     margin-left: 14vmax;
-    font-size: 10vmin;
+    font-size: 5vmin;
 }
 
 .choicing {
@@ -395,6 +397,7 @@
     background-color: aquamarine;
     text-align: center;
     color: white;
+    border: none;
     font-weight: 500;
     height: 10vmin;
     margin-top: -5vmin;
