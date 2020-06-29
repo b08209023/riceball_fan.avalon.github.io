@@ -1,3 +1,7 @@
+* {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
 .background {
     background-image: url(../img/IMG_4768.JPG);
     background-size: cover;
@@ -9,25 +13,68 @@
 #title {
     background-color: #07581599;
     /* display: inline-block; */
-    font-family: 'Noto Sans TC', sans-serif;
     font-weight: 500;
     position: absolute;
     text-align: center;
-    margin-top: 20vh;
-    margin-left: 25vw;
-    margin-right: 25vw;
+    margin-top: 10vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
     height: 20vh;
-    width: 50vw;
+    width: 70vw;
     color: white;
     font-size: 5vw;
     line-height: 20vh;
     border-radius: 4vmin;
 }
 
+#people_num_block {
+    /* background-color: #077a118e; */
+    display: inline-block;
+    position: absolute;
+    margin-top: 32.5vh;
+    margin-left: 15vw;
+    height: 15vh;
+    width: 80vw;
+    /* border-radius: 4vmin; */
+    /* margin-left: */
+}
+
+#num_of_people {
+    position: relative;
+    height: 10vh;
+    width: 15vw;
+    margin-top: 2.5vh;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    /* background-color: #04f5fdc2; */
+    display: inline-block;
+    border-radius: 3vh;
+    text-align: center;
+    font-weight: 500;
+    font-size: 5vh;
+    color: rgb(0, 255, 255);
+}
+
+.num_bottom {
+    position: relative;
+    height: 10vh;
+    width: 7vw;
+    margin-top: 2.5vh;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    background-color: #077a118e;
+    display: inline-block;
+    border-radius: 3vh;
+    text-align: center;
+    font-size: 5vh;
+    color: white;
+    border: none;
+}
+
 #start {
     position: absolute;
     margin-top: 50vh;
-    margin-left: 35vw;
+    margin-left: 30vw;
     /* background-color: #169933b4; */
     background-image: url(../img/excalibur_2.jpg);
     background-size: cover;
@@ -39,6 +86,29 @@
 }
 
 #start_txt {
+    margin-top: 30vh;
+    font-size: 6vh;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: bottom;
+    color: white;
+}
+
+#lady_lake_bottom {
+    position: absolute;
+    margin-top: 50vh;
+    margin-left: 55vw;
+    /* background-color: #169933b4; */
+    background-image: url(../img/Lady_of_the_Lake.jpg);
+    background-size: cover;
+    display: inline-block;
+    height: 40vh;
+    width: 30vh;
+    /* line-height: 10vh; */
+    border-radius: 4vmin;
+}
+
+#lady_tf {
     margin-top: 30vh;
     font-size: 6vh;
     font-weight: 500;
