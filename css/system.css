@@ -193,6 +193,7 @@
 
 #choicing_txt {
     color: white;
+    position: absolute;
     background-color: #077a118e;
     margin-top: 2vmin;
     margin-left: 5vmin;
