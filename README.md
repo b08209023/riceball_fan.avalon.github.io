@@ -4,3 +4,7 @@
 <li>https://hipwallpaper.com/excalibur-wallpapers/</li>
 <li>自己的阿瓦隆桌遊</li>
 <li>自己的相片圖庫</li>
+<li>此作業主要為輔助桌遊，用於紀錄與分配角色，桌遊名稱為阿瓦隆<li>
+<li>僅供學術使用，非營利，若有版權問題煩請通知製作者，謝謝</li>
+<li>2020前端程式設計 期末報告</li>
+<li>大氣科學一 范傑翔 製作</li>
