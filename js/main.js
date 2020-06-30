@@ -656,49 +656,61 @@ $(document).ready(function() {
             lady_check = 1;
             $("#gaming_mainpart").fadeOut();
             $("#lake").fadeIn();
-            alert("請誠實選出你的身分，若你為好人方，請選擇聖杯(任務成功)\n若你為壞人方，請選擇髒杯(任務失敗)")
-            s_f = shuffle(s_f);
-            if (s_f[0] == 1) {
-                $("#lake_left").html("<div id='success_m'></div>");
-                $("#lake_right").html("<div id='fail_m'></div>");
-            } else if (s_f[0] == 0) {
 
-                $("#lake_right").html("<div id='success_m'></div>");
-                $("#lake_left").html("<div id='fail_m'></div>");
-            };
+            setTimeout(function() {
+                alert("請誠實選出你的身分，若你為好人方，請選擇聖杯(任務成功)\n若你為壞人方，請選擇髒杯(任務失敗)")
+                s_f = shuffle(s_f);
+
+                if (s_f[0] == 1) {
+                    $("#lake_left").html("<div id='success_m'></div>");
+                    $("#lake_right").html("<div id='fail_m'></div>");
+                } else if (s_f[0] == 0) {
+
+                    $("#lake_right").html("<div id='success_m'></div>");
+                    $("#lake_left").html("<div id='fail_m'></div>");
+                };
+            }, 1000);
             // voted_cup_confirm = 1;
         }
 
     });
     $("#lake_left").click(function() {
-        if (s_f[0] == 0) {
-            alert("請交給原持有湖中女神的人");
-            alert("他是壞人");
-            alert("湖中女神請交還回去");
-            $("#lake").fadeOut();
-            $("#gaming_mainpart").fakeIn();
-        } else if (s_f[0] == 1) {
-            alert("請交給原持有湖中女神的人");
-            alert("他是好人");
-            alert("湖中女神請交還回去");
-            $("#lake").fadeOut();
-            $("#gaming_mainpart").fakeIn();
-        };
+        $("#lake_left").html('<div class="mission_bg"></div>')
+        $("#lake_right").html('<div class="mission_bg"></div>')
+        setTimeout(function() {
+            if (s_f[0] == 0) {
+                alert("請交給原持有湖中女神的人");
+                alert("他是壞人");
+                alert("湖中女神請交還回去");
+                $("#lake").fadeOut();
+                $("#gaming_mainpart").fadeIn();
+            } else if (s_f[0] == 1) {
+                alert("請交給原持有湖中女神的人");
+                alert("他是好人");
+                alert("湖中女神請交還回去");
+                $("#lake").fadeOut();
+                $("#gaming_mainpart").fadeIn();
+            };
+        }, 1000)
     });
     $("#lake_right").click(function() {
-        if (s_f[0] == 1) {
-            alert("請交給原持有湖中女神的人");
-            alert("他是壞人");
-            alert("湖中女神請交還回去");
-            $("#lake").fadeOut();
-            $("#gaming_mainpart").fakeIn();
-        } else if (s_f[0] == 0) {
-            alert("請交給原持有湖中女神的人");
-            alert("他是好人");
-            alert("湖中女神請交還回去");
-            $("#lake").fadeOut();
-            $("#gaming_mainpart").fakeIn();
-        };
+        $("#lake_left").html('<div class="mission_bg"></div>')
+        $("#lake_right").html('<div class="mission_bg"></div>')
+        setTimeout(function() {
+            if (s_f[0] == 1) {
+                alert("請交給原持有湖中女神的人");
+                alert("他是壞人");
+                alert("湖中女神請交還回去");
+                $("#lake").fadeOut();
+                $("#gaming_mainpart").fadeIn();
+            } else if (s_f[0] == 0) {
+                alert("請交給原持有湖中女神的人");
+                alert("他是好人");
+                alert("湖中女神請交還回去");
+                $("#lake").fadeOut();
+                $("#gaming_mainpart").fadeIn();
+            };
+        }, 1000)
     });
     // $("#title_cup").click(function() {
     // });
