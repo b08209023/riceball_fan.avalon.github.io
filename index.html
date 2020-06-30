@@ -16,7 +16,7 @@
 <body>
     <div id="door">
         <div class="background">
-            <div id="title">Avalon 阿瓦隆 (Default 8)</div>
+            <div id="title">Avalon 阿瓦隆</div>
             <div id="people_num_block">
                 <button class="num_bottom" id="5_p">5人</button>
                 <button class="num_bottom" id="6_p">6人</button>
@@ -85,7 +85,42 @@
             </div>
         </div>
     </div>
-    <div id="gaming_mainpart" style="display:none;"></div>
+    <div id="gaming_mainpart" style="display:none;">
+        <div id="mission_table">
+            <div class="mission_section" id="mission1">
+                <div class="mission_note">參與人數</div>
+                <div id="mission_1">3</div>
+            </div>
+            <div class="mission_section" id="mission2">
+                <div class="mission_note">參與人數</div>
+                <div id="mission_2">4</div>
+            </div>
+            <div class="mission_section" id="mission3">
+                <div class="mission_note">參與人數</div>
+                <div id="mission_3">4</div>
+            </div>
+            <div class="mission_section" id="mission4">
+                <div class="mission_note">參與人數</div>
+                <div id="mission_4">5</div>
+                <div id="mission_four_note">要有兩個失敗(髒杯)<br>才算失敗</div>
+            </div>
+            <div class="mission_section" id="mission5">
+                <div class="mission_note">參與人數</div>
+                <div id="mission_5">5</div>
+            </div>
+        </div>
+        <div class="voting_bord">
+            <div class="voting_text">投票紀錄板，若達到五次失敗則遊戲反方獲勝</div>
+            <div class="voting_records" id="vote_1"></div>
+            <div class="voting_records" id="vote_2"></div>
+            <div class="voting_records" id="vote_3"></div>
+            <div class="voting_records" id="vote_4"></div>
+            <div class="voting_records v5" id="vote_5">
+            </div>
+            <div id="vote_result"></div>
+        </div>
+    </div>
+
     <script src="./js/main.js">
     </script>
 </body>

@@ -121,7 +121,7 @@
 #char_setting2 {
     background-image: url(../img/char_bg.JPG);
     background-size: cover;
-    height: 95vmin;
+    height: 100vmin;
     width: 100vmax;
     /* margin-: auto; */
     display: inline-block;
@@ -394,7 +394,7 @@
 
 #choicing_down {
     width: 100%;
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0.514);
     text-align: center;
     color: white;
     border: none;

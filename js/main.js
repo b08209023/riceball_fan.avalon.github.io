@@ -27,18 +27,26 @@ $(document).ready(function() {
 
         } else if (lady_lake == 1) {
             lady_lake = 0;
-            // $("#lady_tf").fadeOut();
             $("#lady_lake_bottom").html('<div id = "lady_tf"> Disable </div>');
+            // $("#lady_tf").fadeOut();
             // $("#lady_tf").fadeIn();
         }
     });
     $("#5_p").click(function() {
         people_amount = 5;
         $("#num_of_people").html("目前" + people_amount + "人");
+        if (lady_lake == 1) {
+            lady_lake = 0;
+            $("#lady_lake_bottom").html('<div id = "lady_tf"> Disable </div>');
+        }
     });
     $("#6_p").click(function() {
         people_amount = 6;
         $("#num_of_people").html("目前" + people_amount + "人");
+        if (lady_lake == 1) {
+            lady_lake = 0;
+            $("#lady_lake_bottom").html('<div id = "lady_tf"> Disable </div>');
+        }
     });
     $("#7_p").click(function() {
         people_amount = 7;
@@ -180,7 +188,7 @@ $(document).ready(function() {
     $("#choicing_down").click(function() {
         amo = good_amount + bad_amount;
         if ((amo == people_amount && b_2 == 1 && g_1 == 1)) {
-            alert("準備輪流看角色");
+            // alert("準備輪流看角色");
             array = shuffle(array);
             $("#char_setting2").fadeOut(500);
             $("#char_setting").fadeIn(500);
@@ -194,11 +202,58 @@ $(document).ready(function() {
         }
     });
     var index = 0;
-    var clicked = 0
+    var clicked = 0;
+    mission_arr = [];
     $("#char_photo").click(function() {
         if (index == people_amount) {
             $("#char_setting").fadeOut(500);
             $("#gaming_mainpart").fadeIn(1000);
+            if (people_amount < 7) {
+                $("#mission_four_note").html("");
+            };
+            if (people_amount == 5) {
+                $("#mission_1").html("2");
+                $("#mission_2").html("3");
+                $("#mission_3").html("2");
+                $("#mission_4").html("3");
+                $("#mission_5").html("3");
+                mission_arr = [2, 3, 2, 3, 3];
+            } else if (people_amount == 6) {
+                $("#mission_1").html("2");
+                $("#mission_2").html("3");
+                $("#mission_3").html("4");
+                $("#mission_4").html("3");
+                $("#mission_5").html("4");
+                mission_arr = [2, 3, 4, 3, 4];
+            } else if (people_amount == 7) {
+                $("#mission_1").html("2");
+                $("#mission_2").html("3");
+                $("#mission_3").html("3");
+                $("#mission_4").html("4");
+                $("#mission_5").html("4");
+                mission_arr = [2, 3, 3, 4, 4];
+            } else if (people_amount == 8) {
+                $("#mission_1").html("3");
+                $("#mission_2").html("4");
+                $("#mission_3").html("4");
+                $("#mission_4").html("5");
+                $("#mission_5").html("5");
+                mission_arr = [3, 4, 4, 5, 5];
+            } else if (people_amount == 9) {
+                $("#mission_1").html("3");
+                $("#mission_2").html("4");
+                $("#mission_3").html("4");
+                $("#mission_4").html("5");
+                $("#mission_5").html("5");
+                mission_arr = [3, 4, 4, 5, 5];
+            } else if (people_amount == 10) {
+                $("#mission_1").html("3");
+                $("#mission_2").html("4");
+                $("#mission_3").html("4");
+                $("#mission_4").html("5");
+                $("#mission_5").html("5");
+                mission_arr = [3, 4, 4, 5, 5];
+            };
         } else if (clicked == 0) {
             clicked = 1;
             // alert("You clicked, is char");
@@ -245,7 +300,12 @@ $(document).ready(function() {
             $("#char_photo").html('<div id ="char_checking_background"></div>');
         };
 
-    })
+    });
+    // 任務設定
+    mission_pocessing = 0;
+    voting = 0;
+    $("#mission1").click(function() {});
+
 
 
 
