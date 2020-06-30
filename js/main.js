@@ -327,8 +327,9 @@ $(document).ready(function() {
     mission_index = 0;
     m1 = 0, m2 = 0, m3 = 0, m4 = 0, m5 = 0;
     $("#mission1").click(function() {
-        if (mission_pocessing == 0) {
+        if (mission_pocessing == 0 && m1 == 0) {
             mission_pocessing = 1;
+            m1 = 1;
             voting_fail = 0;
             mission_index = 0;
             $("#vote_1").html("");
@@ -337,14 +338,17 @@ $(document).ready(function() {
             $("#vote_4").html("");
             $("#vote_5").html("");
             $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
-        } else {
+        } else if (m1 == 0) {
             alert("任務進行中\n不能隨意切換場次");
-        }
+        } else {
+            alert("已經進行過了!")
+        };
     });
     $("#mission2").click(function() {
-        if (mission_pocessing == 0) {
+        if (mission_pocessing == 0 && m2 == 0) {
             mission_pocessing = 1;
             voting_fail = 0;
+            m2 = 1;
             mission_index = 1;
             $("#vote_1").html("");
             $("#vote_2").html("");
@@ -352,29 +356,35 @@ $(document).ready(function() {
             $("#vote_4").html("");
             $("#vote_5").html("");
             $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
-        } else {
+        } else if (m2 == 0) {
             alert("任務進行中\n不能隨意切換場次");
-        }
+        } else {
+            alert("已經進行過了!")
+        };
     });
     $("#mission3").click(function() {
-        if (mission_pocessing == 0) {
+        if (mission_pocessing == 0 && m3 == 0) {
             mission_pocessing = 1;
             voting_fail = 0;
             mission_index = 2;
+            m3 = 1;
             $("#vote_1").html("");
             $("#vote_2").html("");
             $("#vote_3").html("");
             $("#vote_4").html("");
             $("#vote_5").html("");
             $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
-        } else {
+        } else if (m3 == 0) {
             alert("任務進行中\n不能隨意切換場次");
-        }
+        } else {
+            alert("已經進行過了!")
+        };
     });
     $("#mission4").click(function() {
-        if (mission_pocessing == 0) {
+        if (mission_pocessing == 0 && m4 == 0) {
             mission_pocessing = 1;
             voting_fail = 0;
+            m4 = 1;
             mission_index = 3;
             $("#vote_1").html("");
             $("#vote_2").html("");
@@ -382,13 +392,16 @@ $(document).ready(function() {
             $("#vote_4").html("");
             $("#vote_5").html("");
             $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
-        } else {
+        } else if (m4 == 0) {
             alert("任務進行中\n不能隨意切換場次");
-        }
+        } else {
+            alert("已經進行過了!")
+        };
     });
     $("#mission5").click(function() {
-        if (mission_pocessing == 0) {
+        if (mission_pocessing == 0 && m5 == 0) {
             mission_pocessing = 1;
+            m5 = 1;
             voting_fail = 0;
             mission_index = 4;
             $("#vote_1").html("");
@@ -397,9 +410,11 @@ $(document).ready(function() {
             $("#vote_4").html("");
             $("#vote_5").html("");
             $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
-        } else {
+        } else if (m5 == 0) {
             alert("任務進行中\n不能隨意切換場次");
-        }
+        } else {
+            alert("已經進行過了!")
+        };
     });
 
     lady_check = 0;
