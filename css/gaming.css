@@ -91,3 +91,124 @@
     .v5 {
         background-color: #ff00008e;
     }
+    
+    #vote_result_success {
+        position: absolute;
+        border: none;
+        border-radius: 4vmin;
+        height: 32vmin;
+        width: 24vmin;
+        margin-top: 60vmin;
+        margin-left: 72vw;
+        background-color: #001aff8e;
+        display: inline-block;
+        color: white;
+        font-size: 3vmin;
+        font-weight: 300;
+    }
+    
+    #vote_result_fail {
+        position: absolute;
+        border: none;
+        border-radius: 4vmin;
+        height: 32vmin;
+        width: 24vmin;
+        margin-top: 60vmin;
+        margin-left: 85vw;
+        background-color: #ff0000a2;
+        display: inline-block;
+        color: white;
+        font-size: 3vmin;
+        font-weight: 300;
+    }
+    
+    #mission_going_bg {
+        position: absolute;
+        background-image: url(../img/excalibur.jpg);
+        background-size: cover;
+        height: 100vmin;
+        width: 100vmax;
+        display: inline-block;
+    }
+    
+    #mission_going_1 {
+        position: absolute;
+        height: 60vmin;
+        width: 45vmin;
+        margin-left: 55vw;
+        margin-top: 30vmin;
+        background-color: none;
+        /* display: inline-block; */
+        border: none;
+        border-radius: 4vmin;
+    }
+    
+    #mission_going_2 {
+        position: absolute;
+        height: 60vmin;
+        width: 45vmin;
+        margin-left: 25vw;
+        margin-top: 30vmin;
+        background-color: none;
+        /* display: inline-block; */
+        border: none;
+    }
+    
+    .mission_bg {
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        background-image: url(../img/sf.jpg);
+        border-radius: 4vmin;
+        background-size: cover;
+    }
+    
+    #fail_m {
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        background-image: url(../img/0fail.jpg);
+        border-radius: 4vmin;
+        background-size: cover;
+    }
+    
+    #success_m {
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        border-radius: 4vmin;
+        background-size: cover;
+        background-image: url(../img/0success.jpg);
+    }
+    
+    #title_cup {
+        position: absolute;
+        background-color: #0a8f0679;
+        height: 20vmin;
+        width: 100%;
+        margin-top: 2vmin;
+        text-align: center;
+        color: white;
+        font-size: 7vmin;
+    }
+    
+    #end_game {
+        position: absolute;
+        color: #ff0000;
+        background-image: url(../img/voting.JPG);
+        background-size: cover;
+        height: 100vmin;
+        width: 100vmax;
+        display: inline-block;
+        font-size: 15vmin;
+        font-weight: 500;
+        text-align: center;
+    }
+    
+    .fail_vote_record {
+        background-color: red;
+        font-size: 4vmin;
+        text-align: center;
+        color: white;
+        display: inline-block;
+    }

@@ -86,6 +86,7 @@
         </div>
     </div>
     <div id="gaming_mainpart" style="display:none;">
+        <div class="voting_text" id="topic" style="font-size: 7vmin;">請選擇現在場次</div>
         <div id="mission_table">
             <div class="mission_section" id="mission1">
                 <div class="mission_note">參與人數</div>
@@ -117,10 +118,20 @@
             <div class="voting_records" id="vote_4"></div>
             <div class="voting_records v5" id="vote_5">
             </div>
-            <div id="vote_result"></div>
+        </div>
+        <button id="vote_result_success">同意<br>這些人出任務<br>(同意票數須超過總人數一半)</button>
+        <button id="vote_result_fail">不同意<br>這些人出任務</button>
+    </div>
+    <div id="mission_going_bg" style="display:none;">
+        <div id="title_cup">點此開始投出聖髒杯(任務成功失敗)<br>點擊下圖投票</div>
+        <div id="mission_going_1">
+            <div class="mission_bg"></div>
+        </div>
+        <div id="mission_going_2">
+            <div class="mission_bg"></div>
         </div>
     </div>
-
+    <div id="end_game" style="display:none;"></div>
     <script src="./js/main.js">
     </script>
 </body>

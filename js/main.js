@@ -13,6 +13,21 @@ function shuffle(arr) {
     }
     return arr;
 }
+// /*
+function fadein_voting() {
+    $("#vote_1").fadeOut();
+    $("#vote_2").fadeOut();
+    $("#vote_3").fadeOut();
+    $("#vote_4").fadeOut();
+    $("#vote_5").fadeOut();
+    $("#vote_1").fadeIn();
+    $("#vote_2").fadeIn();
+    $("#vote_3").fadeIn();
+    $("#vote_4").fadeIn();
+    $("#vote_5").fadeIn();
+}
+
+// */
 $(document).ready(function() {
     var lady_lake = 0;
     var people_amount = 8;
@@ -302,12 +317,319 @@ $(document).ready(function() {
 
     });
     // 任務設定
+    success_total = 0, fail_total = 0;
+
     mission_pocessing = 0;
-    voting = 0;
-    $("#mission1").click(function() {});
+    voting_fail = 0;
+    mission_index = 0;
+    m1 = 0, m2 = 0, m3 = 0, m4 = 0, m5 = 0;
+    $("#mission1").click(function() {
+        if (mission_pocessing == 0) {
+            mission_pocessing = 1;
+            voting_fail = 0;
+            mission_index = 0;
+            $("#vote_1").html("");
+            $("#vote_2").html("");
+            $("#vote_3").html("");
+            $("#vote_4").html("");
+            $("#vote_5").html("");
+            $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
+        } else {
+            alert("任務進行中\n不能隨意切換場次");
+        }
+    });
+    $("#mission2").click(function() {
+        if (mission_pocessing == 0) {
+            mission_pocessing = 1;
+            voting_fail = 0;
+            mission_index = 1;
+            $("#vote_1").html("");
+            $("#vote_2").html("");
+            $("#vote_3").html("");
+            $("#vote_4").html("");
+            $("#vote_5").html("");
+            $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
+        } else {
+            alert("任務進行中\n不能隨意切換場次");
+        }
+    });
+    $("#mission3").click(function() {
+        if (mission_pocessing == 0) {
+            mission_pocessing = 1;
+            voting_fail = 0;
+            mission_index = 2;
+            $("#vote_1").html("");
+            $("#vote_2").html("");
+            $("#vote_3").html("");
+            $("#vote_4").html("");
+            $("#vote_5").html("");
+            $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
+        } else {
+            alert("任務進行中\n不能隨意切換場次");
+        }
+    });
+    $("#mission4").click(function() {
+        if (mission_pocessing == 0) {
+            mission_pocessing = 1;
+            voting_fail = 0;
+            mission_index = 3;
+            $("#vote_1").html("");
+            $("#vote_2").html("");
+            $("#vote_3").html("");
+            $("#vote_4").html("");
+            $("#vote_5").html("");
+            $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
+        } else {
+            alert("任務進行中\n不能隨意切換場次");
+        }
+    });
+    $("#mission5").click(function() {
+        if (mission_pocessing == 0) {
+            mission_pocessing = 1;
+            voting_fail = 0;
+            mission_index = 4;
+            $("#vote_1").html("");
+            $("#vote_2").html("");
+            $("#vote_3").html("");
+            $("#vote_4").html("");
+            $("#vote_5").html("");
+            $("#topic").html("現在是在第" + (mission_index + 1) + "次任務，需要" + mission_arr[mission_index] + "人")
+        } else {
+            alert("任務進行中\n不能隨意切換場次");
+        }
+    });
+
+    s_f = [1, 0];
+    $("#vote_result_success").click(function() {
+        if (mission_pocessing == 1) {
+            mission_pocessing = 0;
+            voting_fail = 0;
+            $("#gaming_mainpart").fadeOut();
+            $("#mission_going_bg").fadeIn();
+            $("#topic").html("請選擇現在場次")
+        }
+    });
+    $("#vote_result_fail").click(function() {
+
+        if (mission_pocessing == 1) {
+            if (voting_fail == 4) {
+                $("#gaming_mainpart").fadeOut();
+                $("#end_game").html("任務失敗!<br>邪惡方獲勝!")
+                $("#end_game").fadeIn();
+            } else {
+                voting_fail++;
+                $("#vote_" + voting_fail).fadeOut();
+            }
+        }
+    })
+    voted_cup = 0;
+    voted_cup_confirm = 0;
+    fail_cup = 0;
+    $("#title_cup").click(function() {
+        s_f = shuffle(s_f);
+        if (s_f[0] == 1) {
+            $("#mission_going_1").html("<div id='success_m'></div>");
+            $("#mission_going_2").html("<div id='fail_m'></div>");
+        } else if (s_f[0] == 0) {
+
+            $("#mission_going_2").html("<div id='success_m'></div>");
+            $("#mission_going_1").html("<div id='fail_m'></div>");
+        };
+        voted_cup_confirm = 1;
+    });
+    // /*
+    $("#mission_going_1").click(function() {
+        if (voted_cup_confirm == 1) {
+            voted_cup_confirm = 0;
+            if (s_f[0] == 1) {
+                // success_total++;
+                voted_cup++;
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+                // fadein_voting();
+            } else {
+                voted_cup++;
+                fail_cup++;
+                // fail_total++;
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+                // fadein_voting();
+            };
+        };
+        if (voted_cup == mission_arr[mission_index]) {
+            if (people_amount > 6 && mission_index == 3 && fail_cup > 1) {
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+                $("#mission_" + (mission_index + 1)).html("Fail!")
+                fail_total++;
+                voted_cup = 0;
+                $("#gaming_mainpart").fadeIn();
+                $("#mission_going_bg").fadeOut();
+                fadein_voting();
+                alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                fail_cup = 0;
+                if (fail_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
+                    $("#end_game").fadeIn();
+                };
+                if (success_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務成功，刺客請指認!")
+                    $("#end_game").fadeIn();
+                };
+            } else if ((people_amount < 7 || mission_index != 3) && fail_cup != 0) {
+
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+                $("#mission_" + (mission_index + 1)).html("Fail!")
+                fail_total++;
+                voted_cup = 0;
+                $("#gaming_mainpart").fadeIn();
+                $("#mission_going_bg").fadeOut();
+                fadein_voting();
+                alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                fail_cup = 0;
+                if (fail_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
+                    $("#end_game").fadeIn();
+                };
+                if (success_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務成功，刺客請指認!")
+                    $("#end_game").fadeIn();
+                };
+            } else {
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+                $("#mission_" + (mission_index + 1)).html("<div style='font-size :5vmin;text-align: center;'>Success!</div>")
+                success_total++;
+                $("#gaming_mainpart").fadeIn();
+                $("#mission_going_bg").fadeOut();
+                fadein_voting();
+                alert("任務成功!\n共有" + fail_cup + "個髒杯")
+                voted_cup = 0;
+                fail_cup = 0;
+                if (fail_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
+                    $("#end_game").fadeIn();
+                };
+                if (success_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務成功，刺客請指認!")
+                    $("#end_game").fadeIn();
+                };
+            };
+        };
+        if (fail_total == 3) {
+            $("#mission_going_bg").fadeOut();
+            $("#end_game").html("任務失敗!<br>邪惡方獲勝!")
+                // break;
+        };
+        if (success_total == 3) {
+            $("#mission_going_bg").fadeOut();
+            $("#end_game").html("任務成功，刺客請指認!")
+                // break;
+        };
+    });
+    $("#mission_going_2").click(function() {
+        if (voted_cup_confirm == 1) {
+            voted_cup_confirm = 0;
+            if (s_f[0] == 0) {
+                // success_total++;
+                voted_cup++;
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+            } else {
+                voted_cup++;
+                fail_cup++;
+                // fail_total++;
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+            };
+        };
+        if (voted_cup == mission_arr[mission_index]) {
+            if (people_amount > 6 && mission_index == 3 && fail_cup > 1) {
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+                $("#mission_" + (mission_index + 1)).html("Fail!")
+                fail_total++;
+                voted_cup = 0;
+                $("#gaming_mainpart").fadeIn();
+                $("#mission_going_bg").fadeOut();
+                fadein_voting();
+                alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                fail_cup = 0;
+                if (fail_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
+                    $("#end_game").fadeIn();
+                };
+                if (success_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務成功，刺客請指認!")
+                    $("#end_game").fadeIn();
+                };
+            } else if ((people_amount < 7 || mission_index != 3) && fail_cup != 0) {
+
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+                $("#mission_" + (mission_index + 1)).html("Fail!")
+                fail_total++;
+                voted_cup = 0;
+                $("#gaming_mainpart").fadeIn();
+                $("#mission_going_bg").fadeOut();
+                fadein_voting();
+                alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                fail_cup = 0;
+                if (fail_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
+                    $("#end_game").fadeIn();
+                };
+                if (success_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務成功，刺客請指認!")
+                    $("#end_game").fadeIn();
+                };
+            } else {
+                $("#mission_going_2").html("<div class='mission_bg'></div>");
+                $("#mission_going_1").html("<div class='mission_bg'></div>");
+                $("#mission_" + (mission_index + 1)).html("<div style='font-size :5vmin;text-align: center;'>Success!</div>")
+                success_total++;
+                $("#gaming_mainpart").fadeIn();
+                $("#mission_going_bg").fadeOut();
+                fadein_voting();
+                voted_cup = 0;
+                alert("任務成功!\n共有" + fail_cup + "個髒杯")
+                fail_cup = 0;
+                if (fail_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
+                    $("#end_game").fadeIn();
+                };
+                if (success_total == 3) {
+                    $("#mission_going_bg").fadeOut();
+                    $("#end_game").html("任務成功，刺客請指認!")
+                    $("#end_game").fadeIn();
+                };
+            };
+        };
+        if (fail_total == 3) {
+            $("#mission_going_bg").fadeOut();
+            $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
+            $("#end_game").fadeIn();
+        };
+        if (success_total == 3) {
+            $("#mission_going_bg").fadeOut();
+            $("#end_game").html("任務成功，刺客請指認!")
+            $("#end_game").fadeIn();
+        };
+    });
 
 
-
-
+    // */
 
 })
