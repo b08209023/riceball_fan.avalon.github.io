@@ -22,7 +22,7 @@
     
     #mission_table {
         position: absolute;
-        margin-top: 25vmin;
+        margin-top: 30vmin;
         width: 100%;
         height: 30vmin;
         display: inline-block;
@@ -197,6 +197,7 @@
         color: #ff0000;
         background-image: url(../img/voting.JPG);
         background-size: cover;
+        background-position: bottom;
         height: 100vmin;
         width: 100vmax;
         display: inline-block;
@@ -211,4 +212,56 @@
         text-align: center;
         color: white;
         display: inline-block;
+    }
+    
+    #lake_lady {
+        background-image: url(../img/Lady_of_the_Lake1.jpg);
+        position: absolute;
+        display: inline-block;
+        background-position: bottom;
+        height: 32vmin;
+        width: 24vmin;
+        /* vertical-align: bottom; */
+        text-align: center;
+        background-size: cover;
+        margin-left: 80vw;
+        margin-top: 2vmin;
+        font-size: 2.5vmin;
+        font-weight: 500;
+        color: white;
+        border-radius: 4vmin;
+    }
+    
+    #lake {
+        position: absolute;
+        background-image: url(../img/voting2.JPG);
+        background-position: center center;
+        background-size: cover;
+        height: 100vmin;
+        width: 100vmax;
+        display: inline-block;
+    }
+    
+    #lake_left {
+        position: absolute;
+        height: 60vmin;
+        width: 45vmin;
+        margin-left: 25vw;
+        margin-top: 30vmin;
+        background-color: none;
+        /* display: inline-block; */
+        border: none;
+        border-radius: 4vmin;
+    }
+    
+    #lake_right {
+        position: absolute;
+        height: 60vmin;
+        width: 45vmin;
+        margin-left: 55vw;
+        margin-top: 30vmin;
+        background-color: none;
+        /* display: inline-block; */
+        border: none;
+        border-radius: 4vmin;
     }

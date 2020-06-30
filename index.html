@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resistance Avalon</title>
+    <title>Avalon-Resistance</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/system.css">
@@ -86,7 +86,7 @@
         </div>
     </div>
     <div id="gaming_mainpart" style="display:none;">
-        <div class="voting_text" id="topic" style="font-size: 7vmin;">請選擇現在場次</div>
+        <div class="voting_text" id="topic" style="position:absolute;margin-top: 15vmin;font-size: 7vmin;">請選擇現在場次</div>
         <div id="mission_table">
             <div class="mission_section" id="mission1">
                 <div class="mission_note">參與人數</div>
@@ -121,6 +121,9 @@
         </div>
         <button id="vote_result_success">同意<br>這些人出任務<br>(同意票數須超過總人數一半)</button>
         <button id="vote_result_fail">不同意<br>這些人出任務</button>
+        <div id="lake_lady" style="display:none;">
+            <div style="vertical-align:bottom; margin-top:22vmin;">湖中女神<br>於第二局後可使用</div>
+        </div>
     </div>
     <div id="mission_going_bg" style="display:none;">
         <div id="title_cup">點此開始投出聖髒杯(任務成功失敗)<br>點擊下圖投票</div>
@@ -132,6 +135,15 @@
         </div>
     </div>
     <div id="end_game" style="display:none;"></div>
+    <div id="lake" style="display:none;">
+        <div id="lake_left">
+            <div class="mission_bg"></div>
+        </div>
+        <div id="lake_right">
+
+            <div class="mission_bg"></div>
+        </div>
+    </div>
     <script src="./js/main.js">
     </script>
 </body>

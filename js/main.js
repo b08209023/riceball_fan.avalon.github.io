@@ -38,12 +38,13 @@ $(document).ready(function() {
             lady_lake = 1;
             // $("#lady_tf").fadeOut();
             $("#lady_lake_bottom").html('<div id = "lady_tf"> Enable </div>');
+            $("#lake_lady").fadeIn();
             // $("#lady_tf").fadeIn();
 
         } else if (lady_lake == 1) {
             lady_lake = 0;
             $("#lady_lake_bottom").html('<div id = "lady_tf"> Disable </div>');
-            // $("#lady_tf").fadeOut();
+            $("#lake_lady").fadeOut();
             // $("#lady_tf").fadeIn();
         }
     });
@@ -53,6 +54,7 @@ $(document).ready(function() {
         if (lady_lake == 1) {
             lady_lake = 0;
             $("#lady_lake_bottom").html('<div id = "lady_tf"> Disable </div>');
+            $("#lake_lady").fadeOut();
         }
     });
     $("#6_p").click(function() {
@@ -61,6 +63,7 @@ $(document).ready(function() {
         if (lady_lake == 1) {
             lady_lake = 0;
             $("#lady_lake_bottom").html('<div id = "lady_tf"> Disable </div>');
+            $("#lake_lady").fadeOut();
         }
     });
     $("#7_p").click(function() {
@@ -399,11 +402,13 @@ $(document).ready(function() {
         }
     });
 
+    lady_check = 0;
     s_f = [1, 0];
     $("#vote_result_success").click(function() {
         if (mission_pocessing == 1) {
             mission_pocessing = 0;
             voting_fail = 0;
+            lady_check = 0;
             $("#gaming_mainpart").fadeOut();
             $("#mission_going_bg").fadeIn();
             $("#topic").html("請選擇現在場次")
@@ -466,8 +471,11 @@ $(document).ready(function() {
                 $("#gaming_mainpart").fadeIn();
                 $("#mission_going_bg").fadeOut();
                 fadein_voting();
-                alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
-                fail_cup = 0;
+                // alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                setTimeout(function() {
+                    alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                    fail_cup = 0;
+                }, 1000);
                 if (fail_total == 3) {
                     $("#mission_going_bg").fadeOut();
                     $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
@@ -488,8 +496,11 @@ $(document).ready(function() {
                 $("#gaming_mainpart").fadeIn();
                 $("#mission_going_bg").fadeOut();
                 fadein_voting();
-                alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
-                fail_cup = 0;
+                // alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                setTimeout(function() {
+                    alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                    fail_cup = 0;
+                }, 1000);
                 if (fail_total == 3) {
                     $("#mission_going_bg").fadeOut();
                     $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
@@ -508,9 +519,11 @@ $(document).ready(function() {
                 $("#gaming_mainpart").fadeIn();
                 $("#mission_going_bg").fadeOut();
                 fadein_voting();
-                alert("任務成功!\n共有" + fail_cup + "個髒杯")
+                setTimeout(function() {
+                    alert("任務成功!\n共有" + fail_cup + "個髒杯");
+                    fail_cup = 0;
+                }, 1000);
                 voted_cup = 0;
-                fail_cup = 0;
                 if (fail_total == 3) {
                     $("#mission_going_bg").fadeOut();
                     $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
@@ -560,8 +573,10 @@ $(document).ready(function() {
                 $("#gaming_mainpart").fadeIn();
                 $("#mission_going_bg").fadeOut();
                 fadein_voting();
-                alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
-                fail_cup = 0;
+                setTimeout(function() {
+                    alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                    fail_cup = 0;
+                }, 1000);
                 if (fail_total == 3) {
                     $("#mission_going_bg").fadeOut();
                     $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
@@ -582,8 +597,11 @@ $(document).ready(function() {
                 $("#gaming_mainpart").fadeIn();
                 $("#mission_going_bg").fadeOut();
                 fadein_voting();
-                alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
-                fail_cup = 0;
+                // alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                setTimeout(function() {
+                    alert("任務" + (mission_index + 1) + "失敗!\n共有" + fail_cup + "個髒杯");
+                    fail_cup = 0;
+                }, 1000);
                 if (fail_total == 3) {
                     $("#mission_going_bg").fadeOut();
                     $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
@@ -603,8 +621,11 @@ $(document).ready(function() {
                 $("#mission_going_bg").fadeOut();
                 fadein_voting();
                 voted_cup = 0;
-                alert("任務成功!\n共有" + fail_cup + "個髒杯")
-                fail_cup = 0;
+                // alert("任務成功!\n共有" + fail_cup + "個髒杯")
+                setTimeout(function() {
+                    alert("任務成功!\n共有" + fail_cup + "個髒杯");
+                    fail_cup = 0;
+                }, 1000);
                 if (fail_total == 3) {
                     $("#mission_going_bg").fadeOut();
                     $("#end_game").html("任務失敗!<br>邪惡方獲勝!");
@@ -629,7 +650,58 @@ $(document).ready(function() {
         };
     });
 
+    $("#lake_lady").click(function() {
+        if ((fail_total + success_total) >= 2 && lady_check == 0) {
+            alert("請挑選您想驗身分的人，並交給他，請他按確認\n湖中女神將轉移至被驗者手上\n一局只可使用一次")
+            lady_check = 1;
+            $("#gaming_mainpart").fadeOut();
+            $("#lake").fadeIn();
+            alert("請誠實選出你的身分，若你為好人方，請選擇聖杯(任務成功)\n若你為壞人方，請選擇髒杯(任務失敗)")
+            s_f = shuffle(s_f);
+            if (s_f[0] == 1) {
+                $("#lake_left").html("<div id='success_m'></div>");
+                $("#lake_right").html("<div id='fail_m'></div>");
+            } else if (s_f[0] == 0) {
 
+                $("#lake_right").html("<div id='success_m'></div>");
+                $("#lake_left").html("<div id='fail_m'></div>");
+            };
+            // voted_cup_confirm = 1;
+        }
+
+    });
+    $("#lake_left").click(function() {
+        if (s_f[0] == 0) {
+            alert("請交給原持有湖中女神的人");
+            alert("他是壞人");
+            alert("湖中女神請交還回去");
+            $("#lake").fadeOut();
+            $("#gaming_mainpart").fakeIn();
+        } else if (s_f[0] == 1) {
+            alert("請交給原持有湖中女神的人");
+            alert("他是好人");
+            alert("湖中女神請交還回去");
+            $("#lake").fadeOut();
+            $("#gaming_mainpart").fakeIn();
+        };
+    });
+    $("#lake_right").click(function() {
+        if (s_f[0] == 1) {
+            alert("請交給原持有湖中女神的人");
+            alert("他是壞人");
+            alert("湖中女神請交還回去");
+            $("#lake").fadeOut();
+            $("#gaming_mainpart").fakeIn();
+        } else if (s_f[0] == 0) {
+            alert("請交給原持有湖中女神的人");
+            alert("他是好人");
+            alert("湖中女神請交還回去");
+            $("#lake").fadeOut();
+            $("#gaming_mainpart").fakeIn();
+        };
+    });
+    // $("#title_cup").click(function() {
+    // });
     // */
 
-})
+});
